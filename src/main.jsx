@@ -8,3 +8,8 @@ createRoot(document.getElementById('root')).render(
     <App />
   </StrictMode>,
 )
+
+
+{/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">
+      Fahad
+    </span> */}
