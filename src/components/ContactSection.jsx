@@ -14,20 +14,20 @@ import { useToast } from "../hooks/use-toast";
 
 const ContactSection = () => {
   const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
 
-    setIsSubmitting(true)
+    setIsSubmitting(true);
 
     setTimeout(() => {
       toast({
         title: "Message sent!",
         description: "Thank you for your message, I'll get back to you soon",
       });
-      setIsSubmitting(false)
+      setIsSubmitting(false);
       form.reset();
     }, 1500);
   };
@@ -83,15 +83,17 @@ const ContactSection = () => {
 
             <div className="space-y-6">
               {contactInfo.map((item, index) => (
-                <div key={index} className="flex items-start gap-4">
-                  <div className="p-3 rounded-full bg-primary/10 mt-1">
+                <div key={index} className="flex items-start group">
+                  <div className="p-2.5 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
                     {item.icon}
                   </div>
-                  <div>
-                    <h4 className="font-medium">{item.title}</h4>
+                  <div className="flex-1">
+                    <h4 className="font-medium text-sm uppercase tracking-wider text-muted-foreground mb-1">
+                      {item.title}
+                    </h4>
                     <a
                       href={item.href}
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-foreground hover:text-primary transition-colors text-base font-normal block"
                     >
                       {item.value}
                     </a>
@@ -99,7 +101,6 @@ const ContactSection = () => {
                 </div>
               ))}
             </div>
-
             <div className="mt-auto pt-8 border-t border-muted/20">
               <h4 className="text-sm font-medium text-muted-foreground mb-4 text-center">
                 CONNECT WITH ME

@@ -19,20 +19,21 @@ const HeroSection = () => {
               Developer
             </span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            <h2 className="font-bold">
+          <p className="md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3 text-xl">
+            <h2 className="font-bold text-2xl pb-2">
               My name is{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">
                 Fahad
               </span>
             </h2>
-            I'm a self-taught <span className="text-primary">MERN</span> stack
-            developer passionate about building full-stack{" "}
-            <span className="text-primary">web applications</span>. I focus on
-            writing clean, maintainable code and constantly strive to improve my{" "}
-            <span className="text-primary"> skills </span>through hands-on
+            <p className="text-xl">
+
+            Passionate about building full-stack{" "}
+            <span className="text-primary font-bold">web applications</span>. Constantly strive to improve my{" "}
+            <span className="text-primary font-bold"> skills </span>through hands-on
             projects and continuous{" "}
-            <span className="text-primary">learning</span>.
+            <span className="text-primary font-bold">learning</span>.
+            </p>
           </p>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">

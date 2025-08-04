@@ -11,14 +11,15 @@ const AboutSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h3 className="text-2xl font-semibold">
+            <h3 className="text-2xl font-bold">
               Passionate <span className="text-primary"> Web Developer </span>
             </h3>
 
-            <p className="text-muted-foreground">
-              I'm passionate about creating elegant solutions to complex
-              problems, and I'm constantly learning new technologies and
-              techniques to stay at the forefront of the ever-evolving web
+            <p className="text-muted-foreground text-xl">
+             I'm a self-taught <span className="text-primary font-bold"> MERN </span> stack
+            developer. I'm <span className="text-primary font-bold">passionate</span> about creating elegant solutions to <span className="text-primary font-bold"> complex </span>
+              problems, and I'm constantly learning new <span className="text-primary font-bold"> technologies</span> and
+              <span className="text-primary font-bold"> techniques</span> to stay at the forefront of the ever-evolving <span className="text-primary font-bold"> web </span>
               landscape.
             </p>
 
