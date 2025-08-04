@@ -230,7 +230,7 @@ const ProjectsSection = () => {
 
                   <button
                     onClick={() => openModal(project)}
-                    className="flex-shrink-0 flex items-center space-x-2 px-4 py-2 rounded-full bg-primary/10 text-primary dark:text-primary border border-primary/20 hover:bg-primary hover:text-white dark:hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 z-20"
+                    className="flex-shrink-0 flex items-center space-x-2 px-2.5 py-1.5 rounded-full bg-primary/10 text-primary dark:text-primary border border-primary/20 hover:bg-primary hover:text-white dark:hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 z-20"
                     aria-label={`View details about ${project.title}`}
                   >
                     <span className="text-sm font-medium">Details</span>
