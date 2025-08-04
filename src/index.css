@@ -166,3 +166,9 @@
   50% { transform: scale(1.2) rotate(180deg); }
   100% { transform: scale(1) rotate(360deg); }
 }
+
+@media (max-width: 320px) {
+  .responsive-text {
+    font-size: 16px !important;
+  }
+}

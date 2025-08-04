@@ -11,11 +11,11 @@ const AboutSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold">
+            <h3 className="text-2xl font-bold text-left">
               Passionate <span className="text-primary"> Web Developer </span>
             </h3>
 
-            <p className="text-muted-foreground text-xl">
+            <p className="text-muted-foreground text-xl text-left">
              I'm a self-taught <span className="text-primary font-bold"> MERN </span> stack
             developer. I'm <span className="text-primary font-bold">passionate</span> about creating elegant solutions to <span className="text-primary font-bold"> complex </span>
               problems, and I'm constantly learning new <span className="text-primary font-bold"> technologies</span> and
