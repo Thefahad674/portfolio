@@ -1,4 +1,4 @@
- @import "tailwindcss";
+@import "tailwindcss";
 
 @theme {
   --color-border: hsl(var(--border));
@@ -162,9 +162,15 @@
 }
 
 @keyframes bounceSpin {
-  0% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.2) rotate(180deg); }
-  100% { transform: scale(1) rotate(360deg); }
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
 }
 
 @media (max-width: 320px) {
@@ -172,3 +178,4 @@
     font-size: 16px !important;
   }
 }
+ 

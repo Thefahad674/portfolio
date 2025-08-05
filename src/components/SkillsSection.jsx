@@ -98,33 +98,23 @@ const SkillsSection = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
           {filteredSkills.map((skill, key) => (
             <div
               key={key}
-              className="bg-card p-4 sm:p-6 rounded-lg shadow-xs transition-transform transform hover:scale-[1.03]"
+              className="bg-card p-3 sm:p-4 md:p-6 rounded-lg shadow-xs transition-transform transform hover:scale-[1.03] overflow-hidden"
             >
-              <div className="flex items-center gap-3 mb-2 sm:mb-4">
+              <div className="flex items-center gap-2 sm:gap-3 min-w-0">
                 <span
-                  className="text-2xl sm:text-3xl"
+                  className="text-xl sm:text-2xl md:text-3xl flex-shrink-0"
                   style={{ color: skill.color }}
                 >
                   {skill.logo}
                 </span>
-                <h3 className="font-semibold text-base sm:text-lg">
+                <h3 className="font-semibold text-sm sm:text-base md:text-lg truncate min-w-0">
                   {skill.name}
                 </h3>
               </div>
-
-              {/* Future enhancement: skill bar or description */}
-              {/* <div className="hidden sm:block">
-                <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-primary"
-                    style={{ width: `${skill.level}%` }}
-                  />
-                </div>
-              </div> */}
             </div>
           ))}
         </div>

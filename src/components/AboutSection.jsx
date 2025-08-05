@@ -2,24 +2,34 @@ import { Briefcase, Code, User } from "lucide-react";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 px-4 relative">
-      {" "}
+    <section id="about" className="py-5 px-4 relative">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+        <h2 className="text-4xl md:text-4xl font-bold mb-12 text-center">
           About <span className="text-primary"> Me</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-left">
-              Passionate <span className="text-primary"> Web Developer </span>
+            <h3 className="text-2xl font-bold text-left opacity-0 animate-fade-in text-[6vw] sm:text-[5vw] md:text-[4vw] lg:text-[2vw]">
+              Passionate{" "}
+              <span className="text-primary text-[5vw] sm:text-[5vw] md:text-[4vw] lg:text-[2vw]">
+                {" "}
+                Web Developer{" "}
+              </span>
             </h3>
 
             <p className="text-muted-foreground text-xl text-left">
-             I'm a self-taught <span className="text-primary font-bold"> MERN </span> stack
-            developer. I'm <span className="text-primary font-bold">passionate</span> about creating elegant solutions to <span className="text-primary font-bold"> complex </span>
-              problems, and I'm constantly learning new <span className="text-primary font-bold"> technologies</span> and
-              <span className="text-primary font-bold"> techniques</span> to stay at the forefront of the ever-evolving <span className="text-primary font-bold"> web </span>
+              I'm a self-taught{" "}
+              <span className="text-primary font-bold"> MERN </span> stack
+              developer. I'm{" "}
+              <span className="text-primary font-bold">passionate</span> about
+              creating elegant solutions to{" "}
+              <span className="text-primary font-bold"> complex </span>
+              problems, and I'm constantly learning new{" "}
+              <span className="text-primary font-bold"> technologies</span> and
+              <span className="text-primary font-bold"> techniques</span> to
+              stay at the forefront of the ever-evolving{" "}
+              <span className="text-primary font-bold"> web </span>
               landscape.
             </p>
 
