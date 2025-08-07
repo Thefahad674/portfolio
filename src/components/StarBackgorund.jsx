@@ -82,11 +82,11 @@ export const StarBackground = () => {
           className="meteor animate-meteor"
           style={{
             width: meteor.size * 80 + "px",
-            height: meteor.size * 0.5 + "px",
-            left: meteor.x + "%",
+            height: meteor.size * 0.8 + "px",
+            left: meteor.x + (-90) + "%",
             top: meteor.y + "%",
             animationDelay: meteor.delay,
-            animationDuration: meteor.animationDuration * 0.5 + "s", // Faster
+            animationDuration: meteor.animationDuration * 0.4 + "s", // Faster
             background: "linear-gradient(to right, white, transparent)",
             opacity: 0.8,
             borderRadius: "999px",

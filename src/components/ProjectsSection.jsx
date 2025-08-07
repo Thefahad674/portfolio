@@ -24,10 +24,10 @@ const projects = [
   },
   {
     id: 3,
-    title: "FoodHub Delivery",
+    title: "Delicious Bites",
     description:
-      "Food discovery and delivery service with intelligent recommendations based on user preferences. Includes live order tracking, restaurant ratings, and a seamless checkout process with multiple payment options.",
-    image: "/projects/Food-hub.png",
+      "Food booking and delivery service with intelligent recommendations based on user preferences.Seamless checkout process with multiple payment options.",
+    image: "/projects/FoodHub.png",
     tags: ["React", "Redux", "API Integration", "Geolocation"],
     demoURL: "https://food-hub-thefahad674s-projects.vercel.app/",
     githubUrl: "https://github.com/Thefahad674/Food-hub",
