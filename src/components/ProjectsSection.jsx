@@ -29,7 +29,7 @@ const projects = [
       "Food booking and delivery service with intelligent recommendations based on user preferences.Seamless checkout process with multiple payment options.",
     image: "/projects/FoodHub.png",
     tags: ["React", "Redux", "API Integration", "Geolocation"],
-    demoURL: "https://food-hub-thefahad674s-projects.vercel.app/",
+    demoURL: "https://delicious-bites-thefahad674s-projects.vercel.app/",
     githubUrl: "https://github.com/Thefahad674/Food-hub",
   },
 ];
