@@ -1,5 +1,7 @@
 import { ArrowRight, ExternalLink, Github, X } from "lucide-react";
 import React, { useState, useEffect } from "react";
+import { BackgroundGradient } from "../components/ui/background-gradient";
+import { CometCard } from "../components/ui/comet-card";
 
 const projects = [
   {
@@ -8,7 +10,7 @@ const projects = [
     description:
       "Luxora Rentals is a premium car rental platform offering seamless booking experiences with advanced features like real-time availability and secure payments. The application includes user authentication, admin dashboard, and integrated payment processing.",
     image: "/projects/Luxora-rentals.png",
-    tags: ["React", "TailwindCSS", "MongoDB", "Express", "Node.js", "Imagekit"],
+    tags: ["React", "TailwindCSS", "MongoDB", "Express", "Node.js"],
     demoURL: "https://luxora-rental.vercel.app/",
     githubUrl: "https://github.com/Thefahad674/Luxora-Rental-fullstack",
   },
@@ -90,53 +92,45 @@ const ProjectsSection = () => {
           </p>
         </div>
 
-        {/* Desktop-optimized grid (2 columns) */}
+        {/* Desktop grid (2 columns) */}
         <div className="hidden md:grid md:grid-cols-2 gap-8">
           {projects.map((project) => (
-            <div
+            <BackgroundGradient
               key={project.id}
-              className="group relative overflow-hidden rounded-2xl border border-muted/50 bg-card shadow-lg transition-all hover:shadow-xl hover:border-muted/70"
+              className="flex flex-col h-full rounded-[22px] p-4 sm:p-10 bg-white dark:bg-zinc-900"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-
-              <div className="relative h-64 overflow-hidden">
+              <CometCard className="aspect-video rounded-xl">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 pointer-events-none">
-                  <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 className="text-2xl font-bold text-white dark:text-white mb-2">
-                      {project.title}
-                    </h3>
-                    <p className="text-white/80 dark:text-white/80 text-sm line-clamp-2">
-                      {project.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
+              </CometCard>
 
-              <div className="p-6 relative z-10">
+              <div className="flex flex-col flex-grow p-6 relative z-10">
+                <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+                <p className="text-muted-foreground dark:text-muted-foreground text-sm mb-4 line-clamp-3">
+                  {project.description}
+                </p>
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 text-xs font-medium rounded-full bg-muted/50 text-foreground/80 dark:text-foreground/80 border border-muted-foreground/20 dark:border-muted-foreground/20 transition-all hover:bg-primary/10 hover:text-primary hover:border-primary/30"
+                      className="px-3 py-1 text-xs font-medium rounded-full bg-muted/50 text-foreground/80 border border-muted-foreground/20"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex justify-between items-center gap-4">
+                <div className="flex justify-between items-center gap-4 mt-auto">
                   <div className="flex gap-3 flex-wrap">
                     <a
                       href={project.demoURL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium bg-primary/10 text-primary dark:text-primary border border-primary/20 hover:bg-primary hover:text-white dark:hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 z-20"
-                      aria-label={`View live demo of ${project.title}`}
+                      className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-white transition-colors duration-200"
                     >
                       Live Demo
                       <ExternalLink className="ml-2 h-4 w-4" />
@@ -146,8 +140,7 @@ const ProjectsSection = () => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium bg-muted/50 text-foreground/80 dark:text-foreground/80 border border-muted-foreground/20 dark:border-muted-foreground/20 hover:bg-muted hover:text-foreground dark:hover:text-foreground transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-muted-foreground/30 focus:ring-offset-2 z-20"
-                      aria-label={`View source code of ${project.title}`}
+                      className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium bg-muted/50 text-foreground/80 border border-muted-foreground/20 hover:bg-muted hover:text-foreground transition-colors duration-200"
                     >
                       View Code
                       <Github className="ml-2 h-4 w-4" />
@@ -156,29 +149,25 @@ const ProjectsSection = () => {
 
                   <button
                     onClick={() => openModal(project)}
-                    className="flex-shrink-0 flex items-center space-x-2 px-4 py-2 rounded-full bg-primary/10 text-primary dark:text-primary border border-primary/20 hover:bg-primary hover:text-white dark:hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 z-20"
-                    aria-label={`View details about ${project.title}`}
+                    className="flex-shrink-0 flex items-center space-x-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-white transition-colors duration-200"
                   >
                     <span className="text-sm font-medium">Project Details</span>
-                    <ArrowRight
-                      size={18}
-                      className="transform transition-transform group-hover:translate-x-1"
-                    />
+                    <ArrowRight size={18} />
                   </button>
                 </div>
               </div>
-            </div>
+            </BackgroundGradient>
           ))}
         </div>
 
-        {/* Mobile-optimized grid (1 column) */}
+        {/* Mobile grid (1 column) */}
         <div className="grid grid-cols-1 gap-6 md:hidden">
           {projects.map((project) => (
-            <div
+            <BackgroundGradient
               key={project.id}
-              className="group relative overflow-hidden rounded-xl border border-muted/50 bg-card shadow-md transition-all hover:shadow-lg"
+              className="group relative flex flex-col h-full overflow-hidden rounded-2xl border border-muted/50 bg-card shadow-md transition-all hover:shadow-lg"
             >
-              <div className="relative aspect-video w-full overflow-hidden">
+              <div className="relative aspect-video w-full overflow-hidden rounded-lg">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -187,11 +176,9 @@ const ProjectsSection = () => {
                 />
               </div>
 
-              <div className="p-4">
-                <h3 className="text-xl font-bold mb-2 text-foreground dark:text-foreground">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground dark:text-muted-foreground text-sm mb-3 line-clamp-2">
+              <div className="flex flex-col flex-grow p-4">
+                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                <p className="text-muted-foreground text-sm mb-3 line-clamp-3">
                   {project.description}
                 </p>
 
@@ -199,20 +186,20 @@ const ProjectsSection = () => {
                   {project.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="px-2 py-1 text-xs font-medium rounded-full bg-muted/50 text-foreground/80 dark:text-foreground/80 border border-muted-foreground/20 dark:border-muted-foreground/20"
+                      className="px-2 py-1 text-xs font-medium rounded-full bg-muted/50 text-foreground/80 border border-muted-foreground/20"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex justify-between items-center gap-1">
+                <div className="flex justify-between items-center gap-1 mt-auto">
                   <div className="flex space-x-2">
                     <a
                       href={project.demoURL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-medium bg-primary/10 text-primary dark:text-primary border border-primary/20 hover:bg-primary hover:text-white dark:hover:text-white"
+                      className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-medium bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-white"
                     >
                       Demo
                       <ExternalLink className="ml-1.5 h-3 w-3" />
@@ -221,7 +208,7 @@ const ProjectsSection = () => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-medium bg-muted/50 text-foreground/80 dark:text-foreground/80 border border-muted-foreground/20 dark:border-muted-foreground/20 hover:bg-muted hover:text-foreground dark:hover:text-foreground"
+                      className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-medium bg-muted/50 text-foreground/80 border border-muted-foreground/20 hover:bg-muted hover:text-foreground"
                     >
                       Code
                       <Github className="ml-1.5 h-3 w-3" />
@@ -230,18 +217,14 @@ const ProjectsSection = () => {
 
                   <button
                     onClick={() => openModal(project)}
-                    className="flex-shrink-0 flex items-center space-x-1 px-2 py-1.5 rounded-full bg-primary/10 text-primary dark:text-primary border border-primary/20 hover:bg-primary hover:text-white dark:hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 z-20"
-                    aria-label={`View details about ${project.title}`}
+                    className="flex-shrink-0 flex items-center space-x-1 px-2 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-white transition-colors duration-200"
                   >
                     <span className="text-sm font-medium">Details</span>
-                    <ArrowRight
-                      size={18}
-                      className="transform transition-transform group-hover:translate-x-1"
-                    />
+                    <ArrowRight size={18} />
                   </button>
                 </div>
               </div>
-            </div>
+            </BackgroundGradient>
           ))}
         </div>
 
@@ -250,7 +233,7 @@ const ProjectsSection = () => {
             href="https://github.com/Thefahad674"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-primary to-purple-600 text-white font-medium shadow-lg hover:shadow-primary/40 hover:scale-[1.02] transition-all"
+            className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-primary to-purple-600 text-white font-medium shadow-lg hover:scale-[1.02] transition-all"
           >
             Check My Github
             <ArrowRight className="ml-2 h-5 w-5" />
@@ -268,7 +251,6 @@ const ProjectsSection = () => {
             <button
               onClick={closeModal}
               className="absolute right-1 p-1 rounded-full bg-muted hover:bg-muted/80 transition-colors z-10"
-              aria-label="Close modal"
             >
               <X size={20} />
             </button>
@@ -283,10 +265,10 @@ const ProjectsSection = () => {
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold mb-4 text-foreground dark:text-foreground">
+                <h3 className="text-2xl font-bold mb-4">
                   {selectedProject.title}
                 </h3>
-                <p className="text-muted-foreground dark:text-muted-foreground mb-6 whitespace-pre-line">
+                <p className="text-muted-foreground mb-6 whitespace-pre-line">
                   {selectedProject.description}
                 </p>
 
@@ -294,7 +276,7 @@ const ProjectsSection = () => {
                   {selectedProject.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 text-xs font-medium rounded-full bg-muted/50 text-foreground/80 dark:text-foreground/80 border border-muted-foreground/20 dark:border-muted-foreground/20"
+                      className="px-3 py-1 text-xs font-medium rounded-full bg-muted/50 text-foreground/80 border border-muted-foreground/20"
                     >
                       {tag}
                     </span>
@@ -306,7 +288,7 @@ const ProjectsSection = () => {
                     href={selectedProject.demoURL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium bg-primary/10 text-primary dark:text-primary border border-primary/20 hover:bg-primary/20 hover:border-primary/30 transition-all"
+                    className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-white"
                   >
                     Live Demo
                     <ExternalLink className="ml-2 h-4 w-4" />
@@ -315,7 +297,7 @@ const ProjectsSection = () => {
                     href={selectedProject.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium bg-muted/50 text-foreground/80 dark:text-foreground/80 border border-muted-foreground/20 dark:border-muted-foreground/20 hover:bg-muted/70 hover:text-foreground dark:hover:text-foreground transition-all"
+                    className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium bg-muted/50 text-foreground/80 border border-muted-foreground/20 hover:bg-muted hover:text-foreground"
                   >
                     View Code
                     <Github className="ml-2 h-4 w-4" />

@@ -1,6 +1,8 @@
 import { ArrowDown } from "lucide-react";
+import { FlipWords } from "../components/ui/flip-words";
 
 const HeroSection = () => {
+    const words = ["Full-Stack Developer", "MERN Stack Developer", "Web Developer"]
   return (
     <section
       id="#hero"
@@ -12,16 +14,12 @@ const HeroSection = () => {
           <div className="text-left whitespace-nowrap">
             <h1 className="font-bold tracking-tight inline-block">
               <span className="opacity-0 animate-fade-in text-[6vw] sm:text-[5vw] md:text-[4vw] lg:text-[3vw] min-w-max">
-                Hello, I'm a
+                Hello, I'm a 
               </span>
-              <span className="text-primary opacity-0 animate-fade-in-delay-1 text-[6vw] sm:text-[5vw] md:text-[4vw] lg:text-[3vw] min-w-max">
-                {" "}
-                Web
-              </span>
-              <span className="text-primary opacity-0 animate-fade-in-delay-2 text-[6vw] sm:text-[5vw] md:text-[4vw] lg:text-[3vw] min-w-max">
-                {" "}
-                Developer
-              </span>
+              
+              <FlipWords 
+              className='opacity-0 text-[6vw] sm:text-[5vw] md:text-[4vw] lg:text-[3vw] min-w-max '
+              words={words} />
             </h1>
           </div>
 
@@ -33,6 +31,8 @@ const HeroSection = () => {
                 Fahad
               </span>
             </h2>
+            
+
             <p className="text-[4vw] sm:text-[3.5vw] md:text-[2.8vw] lg:text-[2vw] xl:text-xl text-muted-foreground leading-[1.6] text-left">
               Passionate about building full-stack{" "}
               <span className="text-primary font-medium">web applications</span>
@@ -41,6 +41,7 @@ const HeroSection = () => {
               hands-on projects and continuous{" "}
               <span className="text-primary font-medium">learning</span>.
             </p>
+             
           </div>
 
           {/* Button - centered with custom alignment */}

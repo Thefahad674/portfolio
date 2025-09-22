@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa";
 import { RiTailwindCssFill, RiNextjsLine } from "react-icons/ri";
 import { SiExpress, SiMongodb } from "react-icons/si";
+import { GlareCard } from "../components/ui/glare-card";
 
 const skills = [
   // Frontend
@@ -100,9 +101,9 @@ const SkillsSection = () => {
 
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
           {filteredSkills.map((skill, key) => (
-            <div
+            <GlareCard
               key={key}
-              className="bg-card p-3 sm:p-4 md:p-6 rounded-lg shadow-xs transition-transform transform hover:scale-[1.03] overflow-hidden"
+             className="flex flex-col items-center justify-center"
             >
               <div className="flex items-center gap-2 sm:gap-3 min-w-0">
                 <span
@@ -115,7 +116,7 @@ const SkillsSection = () => {
                   {skill.name}
                 </h3>
               </div>
-            </div>
+            </GlareCard>
           ))}
         </div>
       </div>

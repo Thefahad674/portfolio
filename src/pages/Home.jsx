@@ -8,27 +8,33 @@ import SkillsSection from '../components/SkillsSection'
 import ProjectsSection from '../components/ProjectsSection'
 import ContactSection from '../components/ContactSection'
 import { Footer } from '../components/Footer'
+import { TracingBeam } from '../components/ui/tracing-beam'
 
 const Home = () => {
   return (
-    <div className='min-h-screen '>
-        
-        {/* Theme Toggle  */}
-         <ThemeToggle />
-        {/* Background Effects  */}
-        <StarBackground />
-        {/* Navbar  */}
-         <Navbar />
-        {/* Main Content  */}
-        <main>
+    <div className="max-h-screen">
+      {/* Theme Toggle */}
+      <ThemeToggle />
+      
+      {/* Background Effects */}
+      <StarBackground />
+      
+      {/* Navbar */}
+      <Navbar />
+      
+      {/* Main Content */}
+      <main>
+        <TracingBeam className="px-6">
           <HeroSection />
           <AboutSection />
           <SkillsSection />
           <ProjectsSection />
           <ContactSection />
-        </main>
-        {/* Footer  */}
-        <Footer />
+        </TracingBeam>
+      </main>
+      
+      {/* Footer */}
+      <Footer />
     </div>
   )
 }

@@ -33,7 +33,7 @@ const ContactSection = () => {
   };
 
   const socialLinks = [
-    { icon: <Linkedin />, url: "#", label: "LinkedIn" },
+    { icon: <Linkedin />, url: "https://www.linkedin.com/in/syed-fahad-6652a5202/", label: "LinkedIn" },
     { icon: <Twitter />, url: "#", label: "Twitter" },
     { icon: <Instagram />, url: "#", label: "Instagram" },
     { icon: <Facebook />, url: "#", label: "Facebook" },
