@@ -76,7 +76,7 @@ const ProjectsSection = () => {
       </div>
 
       <div className="container mx-auto max-w-6xl relative z-10">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center md:text-center text-left mb-12 md:mb-16">
           <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-primary uppercase rounded-full bg-primary/10 mb-3 md:mb-4">
             My Work
           </span>
@@ -86,7 +86,7 @@ const ProjectsSection = () => {
               Digital Experiences
             </span>
           </h2>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto md:mx-auto">
             Each project is a unique journey from concept to deployment,
             blending design, technology and innovation.
           </p>
@@ -107,7 +107,7 @@ const ProjectsSection = () => {
                 />
               </CometCard>
 
-              <div className="flex flex-col flex-grow p-6 relative z-10">
+              <div className="flex flex-col flex-grow p-6 relative z-10 text-left">
                 <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
                 <p className="text-muted-foreground dark:text-muted-foreground text-sm mb-4 line-clamp-3">
                   {project.description}
@@ -165,7 +165,7 @@ const ProjectsSection = () => {
           {projects.map((project) => (
             <BackgroundGradient
               key={project.id}
-              className="group relative flex flex-col h-full overflow-hidden rounded-2xl border border-muted/50 bg-card shadow-md transition-all hover:shadow-lg"
+              className="group relative flex flex-col h-full overflow-hidden rounded-2xl border border-muted/50 bg-card shadow-md transition-all hover:shadow-lg text-left"
             >
               <div className="relative aspect-video w-full overflow-hidden rounded-lg">
                 <img
@@ -247,7 +247,7 @@ const ProjectsSection = () => {
           className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 md:p-6 backdrop-blur-sm"
           onClick={handleBackdropClick}
         >
-          <div className="relative bg-background rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-muted/50 shadow-2xl">
+          <div className="relative bg-background rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-muted/50 shadow-2xl text-left">
             <button
               onClick={closeModal}
               className="absolute right-1 p-1 rounded-full bg-muted hover:bg-muted/80 transition-colors z-10"

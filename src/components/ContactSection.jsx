@@ -63,37 +63,40 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="py-16 md:py-24 px-4 relative bg-secondary/20"
+      className="py-12 sm:py-16 md:py-24 px-4 relative bg-secondary/20"
     >
-      <div className="container mx-auto max-w-5xl">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">
+      <div className="container mx-auto max-w-6xl">
+        {/* Section Heading */}
+        <div className="text-left md:text-center mb-10 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
             Get In <span className="text-primary">Touch</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl md:mx-auto">
             Have a project in mind or want to collaborate? Feel free to reach
             out. I'm always open to discussing new opportunities.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12">
           {/* Contact Information */}
-          <div className="space-y-8">
-            <h3 className="text-2xl font-semibold">Contact Information</h3>
+          <div className="space-y-8 text-left">
+            <h3 className="text-xl sm:text-2xl font-semibold">
+              Contact Information
+            </h3>
 
             <div className="space-y-6">
               {contactInfo.map((item, index) => (
-                <div key={index} className="flex items-start group">
-                  <div className="p-2.5 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                <div key={index} className="flex items-start gap-3 group">
+                  <div className="p-2 sm:p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
                     {item.icon}
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-medium text-sm uppercase tracking-wider text-muted-foreground mb-1">
+                    <h4 className="font-medium text-xs sm:text-sm uppercase tracking-wider text-muted-foreground mb-1">
                       {item.title}
                     </h4>
                     <a
                       href={item.href}
-                      className="text-foreground hover:text-primary transition-colors text-base font-normal block"
+                      className="text-sm sm:text-base text-foreground hover:text-primary transition-colors block"
                     >
                       {item.value}
                     </a>
@@ -101,11 +104,12 @@ const ContactSection = () => {
                 </div>
               ))}
             </div>
-            <div className="mt-auto pt-8 border-t border-muted/20">
-              <h4 className="text-sm font-medium text-muted-foreground mb-4 text-center">
+
+            <div className="pt-6 border-t border-muted/20">
+              <h4 className="text-xs sm:text-sm font-medium text-muted-foreground mb-4 text-left md:text-center">
                 CONNECT WITH ME
               </h4>
-              <div className="flex justify-center gap-4">
+              <div className="flex gap-3 sm:gap-4 flex-wrap md:justify-center">
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
@@ -113,13 +117,15 @@ const ContactSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={cn(
-                      "p-2.5 rounded-full bg-muted/50 hover:bg-primary/10",
+                      "p-2 sm:p-2.5 rounded-full bg-muted/50 hover:bg-primary/10",
                       "transition-all hover:scale-110 hover:text-primary",
                       "text-muted-foreground hover:text-primary"
                     )}
                     aria-label={social.label}
                   >
-                    {React.cloneElement(social.icon, { className: "h-5 w-5" })}
+                    {React.cloneElement(social.icon, {
+                      className: "h-4 w-4 sm:h-5 sm:w-5",
+                    })}
                   </a>
                 ))}
               </div>
@@ -127,14 +133,16 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-card p-6 md:p-8 rounded-xl shadow-sm border border-muted/20">
-            <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
+          <div className="bg-card p-5 sm:p-6 md:p-8 rounded-xl shadow-sm border border-muted/20 text-left">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-6">
+              Send a Message
+            </h3>
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium mb-2"
+                  className="block text-xs sm:text-sm font-medium mb-2"
                 >
                   Your Name
                 </label>
@@ -143,7 +151,7 @@ const ContactSection = () => {
                   id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-muted-foreground/20 bg-background focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-transparent"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-muted-foreground/20 bg-background focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-transparent text-sm sm:text-base"
                   placeholder="John Doe"
                 />
               </div>
@@ -151,7 +159,7 @@ const ContactSection = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium mb-2"
+                  className="block text-xs sm:text-sm font-medium mb-2"
                 >
                   Your Email
                 </label>
@@ -160,7 +168,7 @@ const ContactSection = () => {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-muted-foreground/20 bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-muted-foreground/20 bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent text-sm sm:text-base"
                   placeholder="john@example.com"
                 />
               </div>
@@ -168,7 +176,7 @@ const ContactSection = () => {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium mb-2"
+                  className="block text-xs sm:text-sm font-medium mb-2"
                 >
                   Your Message
                 </label>
@@ -177,7 +185,7 @@ const ContactSection = () => {
                   name="message"
                   rows={4}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-muted-foreground/20 bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border border-muted-foreground/20 bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent text-sm sm:text-base"
                   placeholder="Hello, I'd like to talk about..."
                 ></textarea>
               </div>
@@ -186,11 +194,11 @@ const ContactSection = () => {
                 type="submit"
                 disabled={isSubmitting}
                 className={cn(
-                  "w-full py-3 px-6 rounded-lg bg-gradient-to-r from-primary to-purple-600 text-white font-medium flex items-center justify-center gap-2 hover:shadow-lg transition-all"
+                  "w-full py-2.5 sm:py-3 px-6 rounded-lg bg-gradient-to-r from-primary to-purple-600 text-white font-medium flex items-center justify-center gap-2 hover:shadow-lg transition-all text-sm sm:text-base"
                 )}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
-                <Send size={18} />
+                <Send size={16} className="sm:w-5 sm:h-5" />
               </button>
             </form>
           </div>
