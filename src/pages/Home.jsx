@@ -8,7 +8,6 @@ import SkillsSection from '../components/SkillsSection'
 import ProjectsSection from '../components/ProjectsSection'
 import ContactSection from '../components/ContactSection'
 import { Footer } from '../components/Footer'
-import { TracingBeam } from '../components/ui/tracing-beam'
 
 const Home = () => {
   return (
@@ -24,13 +23,13 @@ const Home = () => {
       
       {/* Main Content */}
       <main>
-        <TracingBeam className="px-6">
+        
           <HeroSection />
           <AboutSection />
           <SkillsSection />
           <ProjectsSection />
           <ContactSection />
-        </TracingBeam>
+        
       </main>
       
       {/* Footer */}

@@ -15,53 +15,19 @@ import { GlareCard } from "../components/ui/glare-card";
 
 const skills = [
   // Frontend
-  {
-    name: "JavaScript",
-    category: "frontend",
-    logo: <FaJs />,
-    color: "#f0db4f",
-  },
+  { name: "JavaScript", category: "frontend", logo: <FaJs />, color: "#f0db4f" },
   { name: "React", category: "frontend", logo: <FaReact />, color: "#61dafb" },
-  {
-    name: "Tailwind CSS",
-    category: "frontend",
-    logo: <RiTailwindCssFill />,
-    color: "#38bdf8",
-  },
-  {
-    name: "Next.js",
-    category: "frontend",
-    logo: <RiNextjsLine />,
-    color: "#0070F3",
-  },
+  { name: "Tailwind CSS", category: "frontend", logo: <RiTailwindCssFill />, color: "#38bdf8" },
+  { name: "Next.js", category: "frontend", logo: <RiNextjsLine />, color: "#0070F3" },
+  
 
   // Backend
-  {
-    name: "Node.js",
-    category: "backend",
-    logo: <FaNodeJs />,
-    color: "#3c873a",
-  },
-  {
-    name: "Express",
-    category: "backend",
-    logo: <SiExpress />,
-    color: "#0075C9",
-  },
-  {
-    name: "MongoDB",
-    category: "backend",
-    logo: <SiMongodb />,
-    color: "#47A248",
-  },
+  { name: "Node.js", category: "backend", logo: <FaNodeJs />, color: "#3c873a" },
+  { name: "Express", category: "backend", logo: <SiExpress />, color: "#0075C9" },
+  { name: "MongoDB", category: "backend", logo: <SiMongodb />, color: "#47A248" },
 
   // Tools
-  {
-    name: "Git/GitHub",
-    category: "tools",
-    logo: <FaGithub />,
-    color: "#4078c0",
-  },
+  { name: "Git/GitHub", category: "tools", logo: <FaGithub />, color: "#4078c0" },
   { name: "Docker", category: "tools", logo: <FaDocker />, color: "#0db7ed" },
   { name: "Figma", category: "tools", logo: <FaFigma />, color: "#F24E1E" },
 ];
@@ -76,18 +42,20 @@ const SkillsSection = () => {
   );
 
   return (
-    <section id="skills" className="py-24 px-4 relative bg-secondary/30">
+    <section id="skills" className="py-16 sm:py-20 px-3 sm:px-6 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+        {/* Heading */}
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-10 text-center">
           My <span className="text-primary">Skills</span>
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        {/* Category Buttons */}
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10">
           {categories.map((category, key) => (
             <button
               key={key}
               className={cn(
-                "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
+                "px-3 sm:px-5 py-1.5 sm:py-2 text-sm sm:text-base rounded-full transition-colors duration-300 capitalize",
                 activeCategory === category
                   ? "bg-primary text-primary-foreground"
                   : "bg-secondary/70 text-foreground hover:bg-secondary"
@@ -99,20 +67,43 @@ const SkillsSection = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
+        {/* ========== Mobile / Tablet Grid (Simple Cards) ========== */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 lg:hidden">
           {filteredSkills.map((skill, key) => (
-            <GlareCard
+            <div
               key={key}
-             className="flex flex-col items-center justify-center"
+              className="w-full flex flex-col items-center justify-center p-2 sm:p-3 rounded-xl bg-secondary/70"
             >
-              <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+              <div className="flex flex-col items-center">
                 <span
-                  className="text-xl sm:text-2xl md:text-3xl flex-shrink-0"
+                  className="text-lg sm:text-xl md:text-2xl flex-shrink-0"
                   style={{ color: skill.color }}
                 >
                   {skill.logo}
                 </span>
-                <h3 className="font-semibold text-sm sm:text-base md:text-lg truncate min-w-0">
+                <h3 className="font-semibold text-xs sm:text-sm md:text-base mt-1 text-center">
+                  {skill.name}
+                </h3>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* ========== Desktop Grid (Glare Cards) ========== */}
+        <div className="hidden lg:grid grid-cols-3 gap-4 md:gap-6">
+          {filteredSkills.map((skill, key) => (
+            <GlareCard
+              key={key}
+              className="flex flex-col items-center justify-center p-4 rounded-xl"
+            >
+              <div className="flex flex-col items-center">
+                <span
+                  className="text-xl md:text-2xl flex-shrink-0"
+                  style={{ color: skill.color }}
+                >
+                  {skill.logo}
+                </span>
+                <h3 className="font-semibold text-sm md:text-base mt-1 text-center">
                   {skill.name}
                 </h3>
               </div>
