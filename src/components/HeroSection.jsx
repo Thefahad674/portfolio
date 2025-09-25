@@ -2,12 +2,12 @@ import { FlipWords } from "../components/ui/flip-words";
 
 const HeroSection = () => {
   const words = ["Full-Stack Developer", "MERN Stack Developer", "Web Developer"];
+
   return (
     <section
       id="hero"
       className="relative min-h-screen flex flex-col items-center justify-center px-4"
     >
-      
       <div className="container max-w-4xl mx-auto z-10 text-left sm:text-left">
         <div className="space-y-6">
           {/* Heading */}
@@ -15,12 +15,20 @@ const HeroSection = () => {
             <h1 className="font-bold tracking-tight inline-block">
               <span className="opacity-0 animate-fade-in text-[6vw] sm:text-[5vw] md:text-[4vw] lg:text-[3vw] min-w-max">
                 Hello, I'm a
+              </span>{" "}
+
+              {/* On small screens: show static text */}
+              <span className="text-primary inline-block text-[6vw] sm:hidden whitespace-nowrap opacity-0 animate-fade-in">
+                Web Developer
               </span>
 
-              <FlipWords
-                className="opacity-0 text-[6vw] sm:text-[5vw] md:text-[4vw] lg:text-[3vw] min-w-max"
-                words={words}
-              />
+              {/* On medium+ screens: show FlipWords */}
+              <span className="hidden sm:inline-block">
+                <FlipWords
+                  className="opacity-0 text-[5vw] md:text-[4vw] lg:text-[3vw] whitespace-nowrap"
+                  words={words}
+                />
+              </span>
             </h1>
           </div>
 
@@ -35,8 +43,8 @@ const HeroSection = () => {
 
             <p className="text-[4vw] sm:text-[3.5vw] md:text-[2.8vw] lg:text-[2vw] xl:text-xl text-muted-foreground leading-[1.6]">
               Passionate about building full-stack{" "}
-              <span className="text-primary font-medium">web applications</span>
-              . Constantly striving to improve my{" "}
+              <span className="text-primary font-medium">web applications</span>.
+              Constantly striving to improve my{" "}
               <span className="text-primary font-medium">skills</span> through
               hands-on projects and continuous{" "}
               <span className="text-primary font-medium">learning</span>.

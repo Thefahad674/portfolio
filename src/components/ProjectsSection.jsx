@@ -167,7 +167,7 @@ const ProjectsSection = () => {
               key={project.id}
               className="group relative flex flex-col h-full overflow-hidden rounded-2xl border border-muted/50 bg-card shadow-md transition-all hover:shadow-lg text-left"
             >
-              <div className="relative aspect-video w-full overflow-hidden rounded-lg">
+              <div className="relative aspect-video w-full overflow-hidden rounded-2xl">
                 <img
                   src={project.image}
                   alt={project.title}
