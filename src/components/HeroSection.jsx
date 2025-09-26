@@ -10,7 +10,7 @@ const HeroSection = () => {
     >
       <div className="container max-w-4xl mx-auto z-10 text-left sm:text-left">
         <div className="space-y-6">
-          {/* Heading */}
+          
           <div className="whitespace-nowrap">
             <h1 className="font-bold tracking-tight inline-block">
               <span className="opacity-0 animate-fade-in text-[6vw] sm:text-[5vw] md:text-[4vw] lg:text-[3vw] min-w-max">
