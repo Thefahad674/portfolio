@@ -6,6 +6,16 @@ import { CometCard } from "../components/ui/comet-card";
 const projects = [
   {
     id: 1,
+    title: "ClarifAI",
+    description:
+     "ClarifAI is an AI-powered knowledge base built with Next.js, LangChain, and OpenAI API. It uses RAG with vector databases to deliver accurate, context-aware answers. Showcases skills in full-stack development and AI-driven search systems. *Works only on Localhost*",
+    image: "/projects/ClarifAI.png",
+    tags: ["Next.js", "React", "LangChain", "Ollama API", "Pinecone", "VectorDB", "TailwindCSS"],
+    demoURL: "https://clarif-ai-one.vercel.app",
+    githubUrl: "https://github.com/Thefahad674/ClarifAI",
+  },
+  {
+    id: 2,
     title: "Luxrora Rentals",
     description:
       "Luxora Rentals is a premium car rental platform offering seamless booking experiences with advanced features like real-time availability and secure payments. The application includes user authentication, admin dashboard, and integrated payment processing.",
@@ -15,7 +25,7 @@ const projects = [
     githubUrl: "https://github.com/Thefahad674/Luxora-Rental-fullstack",
   },
   {
-    id: 2,
+    id: 3,
     title: "Blogs App",
     description:
       "A modern blogging platform with rich text editing, social sharing, and personalized recommendations. Features include markdown support, user profiles, comments, and responsive design for optimal reading experience on all devices.",
@@ -25,7 +35,7 @@ const projects = [
     githubUrl: "https://github.com/Thefahad674/blog-app",
   },
   {
-    id: 3,
+    id: 4,
     title: "Delicious Bites",
     description:
       "Food booking and delivery service with intelligent recommendations based on user preferences.Seamless checkout process with multiple payment options.",
@@ -256,11 +266,11 @@ const ProjectsSection = () => {
             </button>
 
             <div className="grid md:grid-cols-2 gap-6 p-6">
-              <div className="h-64 md:h-full rounded-lg overflow-hidden border border-muted/30">
+              <div className="h-90 md:h-full rounded-lg border border-muted/30">
                 <img
                   src={selectedProject.image}
                   alt={selectedProject.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full  "
                 />
               </div>
 
