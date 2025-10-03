@@ -8,9 +8,17 @@ const projects = [
     id: 1,
     title: "ClarifAI",
     description:
-     "ClarifAI is an AI-powered knowledge base built with Next.js, LangChain, and OpenAI API. It uses RAG with vector databases to deliver accurate, context-aware answers. Showcases skills in full-stack development and AI-driven search systems. *Works only on Localhost*",
+      "ClarifAI is an AI-powered knowledge base built with Next.js, LangChain, and OpenAI API. It uses RAG with vector databases to deliver accurate, context-aware answers. Showcases skills in full-stack development and AI-driven search systems. *Works only on Localhost*",
     image: "/projects/ClarifAI.png",
-    tags: ["Next.js", "React", "LangChain", "Ollama API", "Pinecone", "VectorDB", "TailwindCSS"],
+    tags: [
+      "Next.js",
+      "React",
+      "LangChain",
+      "Ollama API",
+      "Pinecone",
+      "VectorDB",
+      "TailwindCSS",
+    ],
     demoURL: "https://clarif-ai-one.vercel.app",
     githubUrl: "https://github.com/Thefahad674/ClarifAI",
   },
@@ -181,7 +189,8 @@ const ProjectsSection = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
+                 className="w-full h-full object-contain md:object-cover transition-all duration-500 group-hover:scale-105 bg-black rounded-2xl"
+
                   loading="lazy"
                 />
               </div>
@@ -252,72 +261,79 @@ const ProjectsSection = () => {
       </div>
 
       {/* Modal */}
-      {isModalOpen && selectedProject && (
-        <div
-          className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 md:p-6 backdrop-blur-sm"
-          onClick={handleBackdropClick}
-        >
-          <div className="relative bg-background rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-muted/50 shadow-2xl text-left">
-            <button
-              onClick={closeModal}
-              className="absolute right-1 p-1 rounded-full bg-muted hover:bg-muted/80 transition-colors z-10"
+     {isModalOpen && selectedProject && (
+  <div
+    className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 md:p-6 backdrop-blur-sm"
+    onClick={handleBackdropClick}
+  >
+    <div className="relative bg-background rounded-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto border border-muted/50 shadow-2xl text-left">
+      {/* Close button */}
+      <button
+        onClick={closeModal}
+        className="absolute right-3 top-1 p-1 rounded-full bg-muted hover:text-primary transition-colors z-10"
+      >
+        <X size={20} />
+      </button>
+
+      {/* Modal Content */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+        {/* Image Section */}
+        <div className="w-full rounded-lg overflow-hidden flex items-center justify-center p-2">
+          <img
+            src={selectedProject.image}
+            alt={selectedProject.title}
+            className="w-full h-auto object-contain"
+          />
+        </div>
+
+        {/* Text Section */}
+        <div>
+          <h3 className="text-2xl font-bold mb-4">
+            {selectedProject.title}
+          </h3>
+          <p className="text-muted-foreground mb-6 whitespace-pre-line">
+            {selectedProject.description}
+          </p>
+
+          {/* Tech Stack Tags */}
+          <div className="flex flex-wrap gap-2 mb-6">
+            {selectedProject.tags.map((tag, index) => (
+              <span
+                key={index}
+                className="px-3 py-1 text-xs font-medium rounded-full bg-muted/50 text-foreground/80 border border-muted-foreground/20"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* Buttons */}
+          <div className="flex flex-wrap gap-3">
+            <a
+              href={selectedProject.demoURL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-white"
             >
-              <X size={20} />
-            </button>
-
-            <div className="grid md:grid-cols-2 gap-6 p-6">
-              <div className="h-90 md:h-full rounded-lg border border-muted/30">
-                <img
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
-                  className="w-full h-full  "
-                />
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-bold mb-4">
-                  {selectedProject.title}
-                </h3>
-                <p className="text-muted-foreground mb-6 whitespace-pre-line">
-                  {selectedProject.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {selectedProject.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 text-xs font-medium rounded-full bg-muted/50 text-foreground/80 border border-muted-foreground/20"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex flex-wrap gap-3">
-                  <a
-                    href={selectedProject.demoURL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-white"
-                  >
-                    Live Demo
-                    <ExternalLink className="ml-2 h-4 w-4" />
-                  </a>
-                  <a
-                    href={selectedProject.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium bg-muted/50 text-foreground/80 border border-muted-foreground/20 hover:bg-muted hover:text-foreground"
-                  >
-                    View Code
-                    <Github className="ml-2 h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
+              Live Demo
+              <ExternalLink className="ml-2 h-4 w-4" />
+            </a>
+            <a
+              href={selectedProject.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium bg-muted/50 text-foreground/80 border border-muted-foreground/20 hover:bg-muted hover:text-foreground"
+            >
+              View Code
+              <Github className="ml-2 h-4 w-4" />
+            </a>
           </div>
         </div>
-      )}
+      </div>
+    </div>
+  </div>
+)}
+
     </section>
   );
 };
