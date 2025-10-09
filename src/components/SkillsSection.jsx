@@ -94,7 +94,7 @@ const SkillsSection = () => {
           {filteredSkills.map((skill, key) => (
             <GlareCard
               key={key}
-              className="flex flex-col items-center justify-center p-4 rounded-xl"
+              className="flex flex-col items-center justify-center rounded-xl w-full  bg-card"
             >
               <div className="flex flex-col items-center">
                 <span

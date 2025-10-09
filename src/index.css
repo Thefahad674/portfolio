@@ -64,15 +64,23 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
+    --background: 210 40% 99%;
+    --foreground: 222 47% 12%;
 
     --card: 0 0% 100%;
+    --card-foreground: 222 47% 12%;
 
-    --primary: 250 47% 60%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 245 70% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;
+    --secondary: 210 30% 96%;
+    --secondary-foreground: 222 47% 20%;
+
+    --border: 214 25% 88%;
+    --muted: 214 30% 95%;
+    --muted-foreground: 222 20% 40%;
+
+    --ring: 245 70% 55%;
   }
 
   .dark {
@@ -178,4 +186,3 @@
     font-size: 16px !important;
   }
 }
- 

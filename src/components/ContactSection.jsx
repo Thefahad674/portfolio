@@ -189,12 +189,12 @@ const ContactSection = () => {
                   placeholder="Hello, I'd like to talk about..."
                 ></textarea>
               </div>
-
+              
               <button
                 type="submit"
                 disabled={isSubmitting}
                 className={cn(
-                  "w-full py-2.5 sm:py-3 px-6 rounded-lg bg-gradient-to-r from-primary to-purple-600 text-white font-medium flex items-center justify-center gap-2 hover:shadow-lg transition-all text-sm sm:text-base"
+                  "relative w-full py-2.5 sm:py-3 px-6 rounded-lg bg-gradient-to-r from-primary to-purple-600 text-white font-medium flex items-center justify-center gap-2 transition-all text-sm sm:text-base bg-purple-500 ring-offset-2 duration-200 hover:ring-2 hover:ring-purple-600 dark:ring-offset-black"
                 )}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}

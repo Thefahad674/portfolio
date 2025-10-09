@@ -94,7 +94,7 @@ const ProjectsSection = () => {
       </div>
 
       <div className="container mx-auto max-w-6xl relative z-10">
-        <div className="text-center md:text-center text-left mb-12 md:mb-16">
+        <div className=" md:text-center text-left mb-12 md:mb-16">
           <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-primary uppercase rounded-full bg-primary/10 mb-3 md:mb-4">
             My Work
           </span>
@@ -115,7 +115,7 @@ const ProjectsSection = () => {
           {projects.map((project) => (
             <BackgroundGradient
               key={project.id}
-              className="flex flex-col h-full rounded-[22px] p-4 sm:p-10 bg-white dark:bg-zinc-900"
+              className="flex flex-col h-full rounded-[22px] p-4 sm:p-10 group relative border border-muted/50 bg-card shadow-md transition-all hover:shadow-lg text-left"
             >
               <CometCard className="aspect-video rounded-xl">
                 <img
@@ -185,11 +185,11 @@ const ProjectsSection = () => {
               key={project.id}
               className="group relative flex flex-col h-full overflow-hidden rounded-2xl border border-muted/50 bg-card shadow-md transition-all hover:shadow-lg text-left"
             >
-              <div className="relative aspect-video w-full overflow-hidden rounded-2xl">
+              <div className="relative aspect-video w-full rounded-2xl">
                 <img
                   src={project.image}
                   alt={project.title}
-                 className="w-full h-full object-contain md:object-cover transition-all duration-500 group-hover:scale-105 bg-black rounded-2xl"
+                 className="w-full h-full p-1 transition-all duration-500 group-hover:scale-105 rounded-2xl"
 
                   loading="lazy"
                 />
